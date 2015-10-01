@@ -10,6 +10,13 @@ git log <branch> --not master
 ```
 A list of commits reachable from <branch> that are not reachable from master.
 
+## List remote branches with last committer sorted by date
+```git
+git for-each-ref --format='%(committerdate)%09%(authorname)%09%(refname)' | \
+sort -k5n -k2M -k3n -k4n | grep remotes | \
+awk -F "\t" '{ printf "%-32s %-27s %s\n", $1, $2, $3 }'
+```
+
 ## Add alias
 ```git
 git config --global alias.<name> <command>
