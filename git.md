@@ -36,3 +36,8 @@ git diff-tree -r --name-only --no-commit-id <commit>
 ```git
 git log --graph --oneline
 ```
+
+## Get specific files from another branch
+```git
+git checkout <branch> -- <paths>
+```
