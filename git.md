@@ -41,3 +41,18 @@ git log --graph --oneline
 ```git
 git checkout <branch> -- <paths>
 ```
+
+## Undo a merge
+```git
+git reset --hard
+```
+
+## Undo a merge inside a dirty working tree
+```git
+git reset --merge
+```
+
+## Pull a rebased branch ignoring the local state
+```git
+git reset --hard origin/<rebased>
+```
