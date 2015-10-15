@@ -56,3 +56,8 @@ git reset --merge
 ```git
 git reset --hard origin/<rebased>
 ```
+
+## Show `remote` information (including URL)
+```git
+git remote show origin
+```
