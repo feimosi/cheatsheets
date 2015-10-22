@@ -66,3 +66,8 @@ git remote show origin
 ```git
 git diff --staged
 ```
+
+## Delete a remote branch
+```git
+git push origin --delete <branch>
+```
