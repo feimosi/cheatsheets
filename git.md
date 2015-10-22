@@ -61,3 +61,8 @@ git reset --hard origin/<rebased>
 ```git
 git remote show origin
 ```
+
+## Show only the staged changes 
+```git
+git diff --staged
+```
