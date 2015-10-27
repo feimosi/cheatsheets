@@ -71,3 +71,8 @@ git diff --staged
 ```git
 git push origin --delete <branch>
 ```
+
+## Get the history of specific lines from a file
+```git
+git blame -L <lines_range> <commit> -- <path>
+```
