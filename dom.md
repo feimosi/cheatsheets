@@ -9,3 +9,9 @@ element.insertAdjacentHTML(position, text);
 ```js
 document.createDocumentFragment();
 ```
+
+## [HTMLFormElement.elements](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/elements)
+Returns an HTMLFormControlsCollection of all the form controls contained in the FORM element, with the exception of input elements which have a type attribute of image.
+```js
+var inputs = document.getElementById("form").elements;
+```
