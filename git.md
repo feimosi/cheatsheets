@@ -1,14 +1,14 @@
 # Git
 
-## Determine when a branch was created
+## Show the history of the local branch
 ```git
 git reflog --date=local <branch>
 ```
-Show the history of the branch. The last entry in this list is the point at which you created the branch.
+
+## All the commits reachable from <branch> that are not reachable from master
 ```git
 git log <branch> --not master
 ```
-A list of commits reachable from <branch> that are not reachable from master.
 
 ## List remote branches with last committer sorted by date
 ```git
@@ -32,7 +32,7 @@ git config --get-regexp alias
 git diff-tree -r --name-only --no-commit-id <commit>
 ```
 
-## Convenient log
+## Succint log
 ```git
 git log --graph --oneline
 ```
@@ -42,19 +42,15 @@ git log --graph --oneline
 git checkout <branch> -- <paths>
 ```
 
-## Undo a merge
-```git
-git reset --hard
-```
-
 ## Undo a merge inside a dirty working tree
 ```git
 git reset --merge
 ```
 
-## Pull a rebased branch ignoring the local state
+## Force pull a rebased branch ignoring the local state
 ```git
-git reset --hard origin/<rebased>
+git fetch
+git reset --hard origin/<branch>
 ```
 
 ## Show `remote` information (including URL)
