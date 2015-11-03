@@ -72,3 +72,8 @@ git push origin --delete <branch>
 ```git
 git blame -L <lines_range> <commit> -- <path>
 ```
+
+## Edit the previous commit message
+```git
+git commit --amend -m "New message"
+```
