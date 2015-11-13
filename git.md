@@ -77,3 +77,8 @@ git blame -L <lines_range> <commit> -- <path>
 ```git
 git commit --amend -m "New message"
 ```
+
+## Update the remote branches list
+```git
+git remote prune origin
+```
