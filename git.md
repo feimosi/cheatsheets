@@ -82,3 +82,8 @@ git commit --amend -m "New message"
 ```git
 git remote prune origin
 ```
+
+## Push a new local branch to a remote
+```git
+git push -u origin <branch>
+```
