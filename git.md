@@ -87,3 +87,8 @@ git remote prune origin
 ```git
 git push -u origin <branch>
 ```
+
+## Unstage a file
+```git
+git reset <file>
+```
