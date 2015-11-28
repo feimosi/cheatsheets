@@ -92,3 +92,8 @@ git push -u origin <branch>
 ```git
 git reset <file>
 ```
+
+## Diff between Working Tree and Index
+```git
+git diff --cached
+```
