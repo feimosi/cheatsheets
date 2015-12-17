@@ -5,7 +5,7 @@
 git reflog --date=local <branch>
 ```
 
-## All the commits reachable from <branch> that are not reachable from master
+## All the commits not reachable from master
 ```git
 git log <branch> --not master
 ```
