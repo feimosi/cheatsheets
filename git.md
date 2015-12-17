@@ -10,6 +10,11 @@ git reflog --date=local <branch>
 git log <branch> --not master
 ```
 
+## Log commits with file change stats
+```git
+git l --stat
+```
+
 ## List remote branches with last committer sorted by date
 ```git
 git for-each-ref --format='%(committerdate)%09%(authorname)%09%(refname)' | \
