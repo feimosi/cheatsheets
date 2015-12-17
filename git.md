@@ -66,6 +66,7 @@ git diff --staged
 ## Delete a remote branch
 ```git
 git push origin --delete <branch>
+git push origin :<branch>
 ```
 
 ## Get the history of specific lines from a file
