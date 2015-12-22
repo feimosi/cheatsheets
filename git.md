@@ -5,14 +5,14 @@
 git reflog --date=local <branch>
 ```
 
-## All the commits not reachable from master
+## Log all commits not reachable from master
 ```git
 git log <branch> --not master
 ```
 
-## Log commits with file change stats
+## Log commits with file changes stats
 ```git
-git l --stat
+git log --stat
 ```
 
 ## List remote branches with last committer sorted by date
@@ -39,7 +39,7 @@ git diff-tree -r --name-only --no-commit-id <commit>
 
 ## Succint log
 ```git
-git log --graph --oneline
+git log --graph --oneline --decorate
 ```
 
 ## Get specific files from another branch
@@ -97,9 +97,4 @@ git push -u origin <branch>
 ## Unstage a file
 ```git
 git reset <file>
-```
-
-## Diff between Working Tree and Index
-```git
-git diff --cached
 ```
