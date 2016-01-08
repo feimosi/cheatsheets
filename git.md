@@ -98,3 +98,6 @@ git push -u origin <branch>
 ```git
 git reset <file>
 ```
+___
+# Links
+* [http://ndpsoftware.com/git-cheatsheet.html](http://ndpsoftware.com/git-cheatsheet.html#loc=workspace;)
