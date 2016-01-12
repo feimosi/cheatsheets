@@ -98,6 +98,12 @@ git push -u origin <branch>
 ```git
 git reset <file>
 ```
+
+## Remove local (untracked) files
+```git
+git clean -f -d
+```
+
 ___
 # Links
 * [http://ndpsoftware.com/git-cheatsheet.html](http://ndpsoftware.com/git-cheatsheet.html#loc=workspace;)
