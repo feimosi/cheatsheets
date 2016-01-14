@@ -104,6 +104,11 @@ git reset <file>
 git clean -f -d
 ```
 
+## Compare two branches by their tips
+```git
+git diff <branch-1>..<branch-2>
+```
+
 ___
 # Links
 * [http://ndpsoftware.com/git-cheatsheet.html](http://ndpsoftware.com/git-cheatsheet.html#loc=workspace;)
