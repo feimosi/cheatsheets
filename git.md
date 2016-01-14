@@ -109,6 +109,11 @@ git clean -f -d
 git diff <branch-1>..<branch-2>
 ```
 
+## Log only merge commits
+```git
+git log --merges
+```
+
 ___
 # Links
 * [http://ndpsoftware.com/git-cheatsheet.html](http://ndpsoftware.com/git-cheatsheet.html#loc=workspace;)
