@@ -114,6 +114,13 @@ git diff <branch-1>..<branch-2>
 git log --merges
 ```
 
+## Use new remote repository
+```git
+git remote add <remote> git://path/to/repo.git
+git fetch <remote>
+git checkout --track <remote>/<branch>
+```
+
 ## Changing author info in the repository history
 ```git
 git filter-branch --env-filter '
