@@ -138,6 +138,8 @@ then
     export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
 fi
 ' --tag-name-filter cat -- --branches --tags
+
+git push --force --tags origin 'refs/heads/*'
 ```
 
 ___
