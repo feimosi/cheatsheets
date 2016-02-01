@@ -114,6 +114,25 @@ git diff <branch-1>..<branch-2>
 git log --merges
 ```
 
+## Changing author info in the repository history
+```git
+git filter-branch --env-filter '
+OLD_EMAIL="old@example.com"
+CORRECT_NAME="Marek Grzybek"
+CORRECT_EMAIL="new@example.com"
+if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_COMMITTER_NAME="$CORRECT_NAME"
+    export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
+fi
+if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_AUTHOR_NAME="$CORRECT_NAME"
+    export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
+fi
+' --tag-name-filter cat -- --branches --tags
+```
+
 ___
 # Links
 * [http://ndpsoftware.com/git-cheatsheet.html](http://ndpsoftware.com/git-cheatsheet.html#loc=workspace;)
