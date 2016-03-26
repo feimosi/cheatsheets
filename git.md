@@ -121,6 +121,14 @@ git fetch <remote>
 git checkout --track <remote>/<branch>
 ```
 
+## One-commit feature branch workflow
+```git
+git fetch --all -p
+git checkout origin/master
+git commit -m’changes’
+git push origin HEAD:refs/heads/the-feature
+```
+
 ## Changing author info in the repository history
 ```git
 git filter-branch --env-filter '
