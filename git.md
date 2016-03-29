@@ -58,6 +58,11 @@ git fetch
 git reset --hard origin/<branch>
 ```
 
+## Rebase from the common ancestor
+```git
+git rebase --onto master <ancestor_branch> <branch>
+```
+
 ## Show `remote` information (including URL)
 ```git
 git remote show origin
