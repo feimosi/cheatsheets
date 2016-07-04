@@ -126,6 +126,11 @@ git fetch <remote>
 git checkout --track <remote>/<branch>
 ```
 
+## Change the remote a branch is tracking
+```git
+git branch <branch> -u <remote>/<branch>
+```
+
 ## One-commit feature branch workflow
 ```git
 git fetch --all -p
