@@ -15,3 +15,8 @@ Returns an HTMLFormControlsCollection of all the form controls contained in the 
 ```js
 var inputs = document.getElementById("form").elements;
 ```
+
+## Currently focused element
+```js
+document.activeElement
+```
