@@ -1,5 +1,7 @@
 # Cheatsheets
 
+## [Arch Linux](arch.md)
+
 ## [Git](git.md)
 
 ## [DOM](dom.md)
