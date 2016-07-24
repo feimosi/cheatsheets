@@ -47,6 +47,11 @@ git log --graph --oneline --decorate
 git checkout <branch> -- <paths>
 ```
 
+## Check out any of the previous branches
+```git
+git checkout @{-<number>}
+```
+
 ## Undo a merge inside a dirty working tree
 ```git
 git reset --merge
