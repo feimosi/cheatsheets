@@ -16,3 +16,8 @@ pacman -U <package_file_name>
 vim /etc/pacman.conf
 IgnorePkg=<pkg1> <pkg2>
 ```
+
+## Start a service on system boot:
+```sh
+sudo systemctl enable <service_name>
+```
