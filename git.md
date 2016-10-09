@@ -73,6 +73,11 @@ git rebase --onto master <ancestor_branch> <branch>
 git remote show origin
 ```
 
+## Change the remote's URL
+```git
+git remote set-url origin git@github.com/USERNAME/OTHERREPOSITORY.git
+```
+
 ## Show only the staged changes 
 ```git
 git diff --staged
