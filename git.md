@@ -141,6 +141,11 @@ git checkout --track <remote>/<branch>
 git branch <branch> -u <remote>/<branch>
 ```
 
+## Stop tracking a remote branch
+```git
+git branch --unset-upstream
+```
+
 ## One-commit feature branch workflow
 ```git
 git fetch --all -p
