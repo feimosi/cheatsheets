@@ -1,9 +1,14 @@
 # Arch Linux
 
+## Reinstall a package
+```sh
+pacman -S <pkg_name>
+```
+
 ## Downgrading packages
 ```sh
 cd /var/cache/pacman/pkg/
-pacman -U <package_file_name>
+pacman -U <pkg_file_name>
 ```
 
 ## Pacman history
