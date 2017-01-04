@@ -21,3 +21,8 @@ npm set init.author.url "$SITE"
 ```sh
 npm version 2.1.0
 ```
+
+## Flatten and deduplicate the dependency tree.
+```sh
+npm dedupe
+```
