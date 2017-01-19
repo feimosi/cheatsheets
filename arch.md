@@ -26,3 +26,9 @@ IgnorePkg=<pkg1> <pkg2>
 ```sh
 sudo systemctl enable <service_name>
 ```
+
+## Entering the recovery mode
+
+- in GRUB menu press `e` to edit the linux kernel's run entry
+- append `rescue` string at the end 
+- press Ctrl + X to approve the changes
