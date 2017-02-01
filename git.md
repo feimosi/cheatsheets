@@ -15,6 +15,11 @@ git log <branch> --not master
 git log --stat
 ```
 
+## Search for changes containing given string
+```git
+git log -S '<search string>'
+```
+
 ## List remote branches with last committer sorted by date
 ```git
 git for-each-ref --format='%(committerdate)%09%(authorname)%09%(refname)' | \
