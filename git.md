@@ -151,6 +151,16 @@ git branch <branch> -u <remote>/<branch>
 git branch --unset-upstream
 ```
 
+## Show the last commit matching query string
+```git
+git show :/query
+```
+
+## Show branches containing given SHA
+```git
+git branch --contains <SHA>
+```
+
 ## One-commit feature branch workflow
 ```git
 git fetch --all -p
