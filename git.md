@@ -161,6 +161,11 @@ git show :/query
 git branch --contains <SHA>
 ```
 
+## Temporarily ignore file changes
+```git
+git update-index --assume-unchanged <file>
+```
+
 ## One-commit feature branch workflow
 ```git
 git fetch --all -p
