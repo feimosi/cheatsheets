@@ -1,8 +1,70 @@
 # Git
 
-## Show the history of the local branch
+## Get the history of specific lines from a file
 ```git
-git reflog --date=local <branch>
+git blame -L <lines_range> <commit> -- <path>
+```
+
+## Change the remote a branch is tracking
+```git
+git branch <branch> -u <remote>/<branch>
+```
+
+## Stop tracking a remote branch
+```git
+git branch --unset-upstream
+```
+
+## Get specific files from another branch
+```git
+git checkout <branch> -- <paths>
+```
+
+## Check out any of the previous branches
+```git
+git checkout @{-<number>}
+```
+
+## Remove local (untracked) files
+```git
+git clean -f -d
+```
+
+## Edit the previous commit message
+```git
+git commit --amend -m "New message"
+```
+
+## Add alias
+```git
+git config --global alias.<name> <command>
+```
+
+## List all aliases
+```git
+git config --get-regexp alias
+```
+
+## Show only the staged changes 
+```git
+git diff --staged
+```
+
+## Compare two branches by their tips
+```git
+git diff <branch-1>..<branch-2>
+```
+
+## See the files affected by a commit
+```git
+git diff-tree -r --name-only --no-commit-id <commit>
+```
+
+## List remote branches with last committer sorted by date
+```git
+git for-each-ref --format='%(committerdate)%09%(authorname)%09%(refname)' | \
+sort -k5n -k2M -k3n -k4n | grep remotes | \
+awk -F "\t" '{ printf "%-32s %-27s %s\n", $1, $2, $3 }'
 ```
 
 ## Log all commits not reachable from master
@@ -20,26 +82,9 @@ git log --stat
 git log -S '<search string>'
 ```
 
-## List remote branches with last committer sorted by date
+## Log only merge commits
 ```git
-git for-each-ref --format='%(committerdate)%09%(authorname)%09%(refname)' | \
-sort -k5n -k2M -k3n -k4n | grep remotes | \
-awk -F "\t" '{ printf "%-32s %-27s %s\n", $1, $2, $3 }'
-```
-
-## Add alias
-```git
-git config --global alias.<name> <command>
-```
-
-## List all aliases
-```git
-git config --get-regexp alias
-```
-
-## See the files affected by a commit
-```git
-git diff-tree -r --name-only --no-commit-id <commit>
+git log --merges
 ```
 
 ## Succint log
@@ -47,45 +92,9 @@ git diff-tree -r --name-only --no-commit-id <commit>
 git log --graph --oneline --decorate
 ```
 
-## Get specific files from another branch
+## Squash all branch commits into one and merge them into current branch
 ```git
-git checkout <branch> -- <paths>
-```
-
-## Check out any of the previous branches
-```git
-git checkout @{-<number>}
-```
-
-## Undo a merge inside a dirty working tree
-```git
-git reset --merge
-```
-
-## Force pull a rebased branch ignoring the local state
-```git
-git fetch
-git reset --hard origin/<branch>
-```
-
-## Rebase from the common ancestor
-```git
-git rebase --onto master <ancestor_branch> <branch>
-```
-
-## Show `remote` information (including URL)
-```git
-git remote show origin
-```
-
-## Change the remote's URL
-```git
-git remote set-url origin git@github.com/USERNAME/OTHERREPOSITORY.git
-```
-
-## Show only the staged changes 
-```git
-git diff --staged
+git merge --squash branch
 ```
 
 ## Delete a remote branch
@@ -94,46 +103,20 @@ git push origin --delete <branch>
 git push origin :<branch>
 ```
 
-## Get the history of specific lines from a file
-```git
-git blame -L <lines_range> <commit> -- <path>
-```
-
-## Edit the previous commit message
-```git
-git commit --amend -m "New message"
-```
-
-## Update the remote branches list
-```git
-git remote prune origin
-```
-
 ## Push a new local branch to a remote
 ```git
 git push -u origin <branch>
 ```
 
-## Unstage a file
+## Rebase from the common ancestor
 ```git
-git reset <file>
+git rebase --onto master <ancestor_branch> <branch>
 ```
 
-## Remove local (untracked) files
+## Show the history of the local branch
 ```git
-git clean -f -d
+git reflog --date=local <branch>
 ```
-
-## Compare two branches by their tips
-```git
-git diff <branch-1>..<branch-2>
-```
-
-## Log only merge commits
-```git
-git log --merges
-```
-
 ## Use new remote repository
 ```git
 git remote add <remote> git://path/to/repo.git
@@ -141,14 +124,34 @@ git fetch <remote>
 git checkout --track <remote>/<branch>
 ```
 
-## Change the remote a branch is tracking
+## Show `remote` information (including URL)
 ```git
-git branch <branch> -u <remote>/<branch>
+git remote show origin
+```
+## Change the remote's URL
+```git
+git remote set-url origin git@github.com/USERNAME/OTHERREPOSITORY.git
 ```
 
-## Stop tracking a remote branch
+## Update the remote branches list
 ```git
-git branch --unset-upstream
+git remote prune origin
+```
+
+## Undo a merge inside a dirty working tree
+```git
+git reset --merge
+```
+
+## Unstage a file
+```git
+git reset <file>
+```
+
+## Force pull a rebased branch ignoring the local state
+```git
+git fetch
+git reset --hard origin/<branch>
 ```
 
 ## One-commit feature branch workflow
