@@ -94,7 +94,7 @@ git log --graph --oneline --decorate
 
 ## Squash all branch commits into one and merge them into current branch
 ```git
-git merge --squash branch
+git merge --squash <branch>
 ```
 
 ## Delete a remote branch
