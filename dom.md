@@ -16,6 +16,12 @@ Returns an HTMLFormControlsCollection of all the form controls contained in the 
 var inputs = document.getElementById("form").elements;
 ```
 
+## [CSSStyleDeclaration.cssText](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/cssText)
+Returns or sets the text of the element's inline style declaration.
+```js
+element.style.cssText = 'background-color: blue; font-size: 12px; border: 2px solid green;'
+```
+
 ## Currently focused element
 ```js
 document.activeElement
