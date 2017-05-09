@@ -16,6 +16,15 @@ pacman -U <pkg_file_name>
 /var/log/pacman.log
 ```
 
+## Repairing the Pacman database
+
+- Boot using the Arch installation media.
+- Mount the system's root filesystem, e.g. `mount /dev/sdaX /mnt` as root.
+- Use chroot with `arch-chroot /mnt`.
+- If the system uses default database and directory locations, you can now update the system's pacman database and upgrade it via `pacman --root=/mnt --cachedir=/mnt/var/cache/pacman/pkg -Syyu` as root.
+
+See more here: [https://wiki.archlinux.org/index.php/pacman](https://wiki.archlinux.org/index.php/pacman#Manually_reinstalling_pacman).
+
 ## Skip a package from being upgraded
 ```sh
 vim /etc/pacman.conf
