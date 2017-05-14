@@ -10,6 +10,11 @@ git blame -L <lines_range> <commit> -- <path>
 git branch <branch> -u <remote>/<branch>
 ```
 
+## Start tracking a remote branch
+```git
+git branch --set-upstream-to=<remote>/<branch>
+```
+
 ## Stop tracking a remote branch
 ```git
 git branch --unset-upstream
@@ -201,3 +206,4 @@ git push --force --tags origin 'refs/heads/*'
 ___
 # Links
 * [http://ndpsoftware.com/git-cheatsheet.html](http://ndpsoftware.com/git-cheatsheet.html#loc=workspace;)
+* [How to customise your git commit message](https://dev.to/ebud7/how-to-customise-your-git-commit-message-)
