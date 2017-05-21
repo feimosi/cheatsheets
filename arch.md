@@ -41,6 +41,11 @@ sudo systemctl enable <service_name>
 cat ~/.ssh/id_rsa.pub | xclip -selection clipboard 
 ```
 
+## View the entire file with highlighted matches
+```sh
+egrep --color 'pattern|$' <file>
+```
+
 ## Entering the recovery mode
 
 - in GRUB menu press `e` to edit the linux kernel's run entry
