@@ -25,6 +25,14 @@ pacman -U <pkg_file_name>
 
 See more here: [https://wiki.archlinux.org/index.php/pacman](https://wiki.archlinux.org/index.php/pacman#Manually_reinstalling_pacman).
 
+## Bypass invalid or corrupted package (PGP signature) error
+
+```sh
+pacman -U /var/cache/pacman/pkg/antergos-keyring-*.pkg.tar.xz
+```
+
+This work, since pacman doesn’t check sigs on local packages by default. 
+
 ## Skip a package from being upgraded
 ```sh
 vim /etc/pacman.conf
