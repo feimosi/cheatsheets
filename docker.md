@@ -19,3 +19,22 @@ docker images -q | xargs docker rmi
 ```sh
 docker exec -i -t <container_id> bash
 ```
+
+# Docker Compose
+
+## Run a container
+
+```sh
+docker-compose -f docker-compose-dev.yml run -d --service-ports --rm --no-deps api npm start
+```
+
+* `-d` - Detached mode: Run container in the background
+* `-rm` - Remove container after run. Ignored in detached mode
+* `--no-deps` - Don't start linked services
+* `--service-ports` - Run command with the service's ports enabled and mapped to the host
+
+## Kill a container
+
+```sh
+docker-compose kill api
+```
