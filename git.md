@@ -97,6 +97,11 @@ git log --merges
 git log --graph --oneline --decorate
 ```
 
+## Log with diff
+```git
+git log --full-diff -p   
+```
+
 ## Squash all branch commits into one and merge them into current branch
 ```git
 git merge --squash <branch>
