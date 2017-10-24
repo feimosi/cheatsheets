@@ -25,5 +25,5 @@ db.collection.update({ name: 'Something'}, { $set : { operator: 'Starfleet', cla
 
 ## Insert document
 ```js
-db.collection.insert( { name: "card", age: 21 } )
+db.collection.insert({ name: 'card', age: 21 })
 ```
