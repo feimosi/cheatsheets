@@ -22,3 +22,8 @@ db.collection.find({ name: { $regex: '^U' } })
 ```js
 db.collection.update({ name: 'Something'}, { $set : { operator: 'Starfleet', class: 'Prometheus' } })
 ```
+
+## Insert document
+```js
+db.collection.insert( { name: "card", age: 21 } )
+```
