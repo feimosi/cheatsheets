@@ -59,3 +59,9 @@ egrep --color 'pattern|$' <file>
 - in GRUB menu press `e` to edit the linux kernel's run entry
 - append `rescue` string at the end 
 - press Ctrl + X to approve the changes
+
+## `error while loading shared libraries: libicuuc.so: cannot open shared object file: No such file or directory`
+
+- boot into a live system
+- `mount /dev/sdaX /mnt`
+- `pacman -r /mnt -Syu`
