@@ -20,10 +20,14 @@ pacman -U <pkg_file_name>
 
 - Boot using the Arch installation media.
 - Mount the system's root filesystem, e.g. `mount /dev/sdaX /mnt` as root.
-- Use chroot with `arch-chroot /mnt`.
 - If the system uses default database and directory locations, you can now update the system's pacman database and upgrade it via `pacman --root=/mnt --cachedir=/mnt/var/cache/pacman/pkg -Syyu` as root.
 
 See more here: [https://wiki.archlinux.org/index.php/pacman](https://wiki.archlinux.org/index.php/pacman#Manually_reinstalling_pacman).
+
+## Switch environment from live to installed system
+```sh
+arch-chroot /mnt
+```
 
 ## Bypass invalid or corrupted package (PGP signature) error
 
@@ -65,3 +69,11 @@ egrep --color 'pattern|$' <file>
 - boot into a live system
 - `mount /dev/sdaX /mnt`
 - `pacman -r /mnt -Syu`
+
+_If needed_
+
+```sh
+sudo mount -t proc /dev/sdaX /mnt/proc
+sudo mount -t devtmpfs /dev/sdaX /mnt/dev
+sudo mount -t sysfs /dev/sdaX /mnt/sys
+```
