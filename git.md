@@ -92,6 +92,11 @@ git log -S '<search string>'
 git log --merges
 ```
 
+## Log commits with changed files
+```git
+git log --name-only
+```
+
 ## Succint log
 ```git
 git log --graph --oneline --decorate
