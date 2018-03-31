@@ -43,3 +43,14 @@ npm bugs # Current project's bugtracker
 ```sh
 npm doctor
 ```
+
+## Silent option
+
+`npm run` has a `--silent` option which reduces the output in the Terminal.
+
+```json
+"scripts": {
+  "lint": "xo",
+  "lint:fix": "npm run lint --silent -- --fix",
+}
+```
