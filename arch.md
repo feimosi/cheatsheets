@@ -58,6 +58,17 @@ cat ~/.ssh/id_rsa.pub | xclip -selection clipboard
 egrep --color 'pattern|$' <file>
 ```
 
+## Clean old journal logs
+```sh
+journalctl --vacuum-size=500M
+```
+
+## Clean old pacman packages
+```sh
+paccache -d -k 1
+paccache -r -k 1
+```
+
 ## Entering the recovery mode
 
 - in GRUB menu press `e` to edit the linux kernel's run entry
