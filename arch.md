@@ -88,3 +88,16 @@ sudo mount -t proc /dev/sdaX /mnt/proc
 sudo mount -t devtmpfs /dev/sdaX /mnt/dev
 sudo mount -t sysfs /dev/sdaX /mnt/sys
 ```
+
+## Restore GRUB on an encrypted disk
+
+NOTE: Make sure to boot the Live USB in the UEFI mode
+
+- sudo su
+- cryptsetup open /dev/sdaX CryptName
+- mount /dev/mapper/CryptVolumeGroupName-rootvol /mnt
+- mount /dev/sda2 /mnt/boot
+- mount /dev/sda1 /mnt/boot/efi
+- arch-chroot /mnt
+- grub-mkconfig -o /boot/grub/grub.cfg
+- grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Antergos-grub
