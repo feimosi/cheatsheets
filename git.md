@@ -1,5 +1,13 @@
 # Git
 
+## Enable diffing of untracked files
+```git
+git add -N
+```
+```git
+git add --intent-to-add
+```
+
 ## Get the history of specific lines from a file
 ```git
 git blame -L <lines_range> <commit> -- <path>
