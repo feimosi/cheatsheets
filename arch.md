@@ -63,6 +63,22 @@ egrep --color 'pattern|$' <file>
 journalctl --vacuum-size=500M
 ```
 
+## Cut the video file
+```sh
+ffmpeg -i video.mp4 -ss 00:00:00 -t 00:00:20 -async 1 out.mp4
+```
+
+## Scale the video file
+```sh
+ffmpeg -i input.mp4 -vf scale=400:-2 output400.mp4
+```
+
+## Concatenate video files
+```sh
+printf "file '%s'\n" ./*.mp4 > mylist.txt
+ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4
+```
+
 ## Clean old pacman packages
 ```sh
 paccache -d -k 1
