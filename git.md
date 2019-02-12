@@ -131,6 +131,11 @@ git push origin :<branch>
 git push -u origin <branch>
 ```
 
+## Push local branch to a different remote branch and track it
+```
+git push -u <remote> production:master
+```
+
 ## Rebase from the common ancestor
 ```git
 git rebase --onto master <ancestor_branch> <branch>
