@@ -81,8 +81,9 @@ ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4
 
 ## Clean old pacman packages
 ```sh
-paccache -d -k 1
-paccache -r -k 1
+paccache -ruk0 # remove all uninstalled packages
+paccache -dk 2 # dry-run
+paccache -rk 2 # remove older than 2 last versions
 ```
 
 ## Entering the recovery mode
