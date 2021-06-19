@@ -79,6 +79,13 @@ printf "file '%s'\n" ./*.mp4 > mylist.txt
 ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4
 ```
 
+## Compress the video file
+```sh
+ffmpeg -i input.mp4 -vcodec libx265 -crf 28 output.mp4
+```
+Note: a reasonable CRF range for H.265 may be 24 to 30 - lower CRF values correspond to higher bitrates, and hence produce higher quality videos.\
+Source: https://unix.stackexchange.com/a/38380
+
 ## Clean old pacman packages
 ```sh
 paccache -ruk0 # remove all uninstalled packages
