@@ -45,3 +45,12 @@ docker-compose restart api
 docker-compose kill api
 ```
 
+## Remove Dangling Docker Images
+
+```sh
+docker system prune
+```
+
+In older versions of Docker (and this still works today), you can delete dangling images on their own by running `docker rmi -f $(docker images -f "dangling=true" -q)`.
+
+But with newer versions of Docker (1.13+) there’s an even better command called `docker system prune` which will not only remove dangling images but it will also remove all stopped containers, all networks not used by at least 1 container, all dangling images and build caches.
