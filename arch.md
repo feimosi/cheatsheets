@@ -125,3 +125,17 @@ NOTE: Make sure to boot the Live USB in the UEFI mode
 - arch-chroot /mnt
 - grub-mkconfig -o /boot/grub/grub.cfg
 - grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Antergos-grub
+
+## Changing default app
+
+Check the current default for mime type:
+```sh
+xdg-mime query default inode/directory
+```
+
+Update the default:
+```sh
+xdg-mime default org.gnome.Nautilus.desktop inode/directory
+```
+
+➡ https://www.youtube.com/watch?v=z3F0hTigMvU
