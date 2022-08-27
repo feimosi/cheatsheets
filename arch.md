@@ -126,6 +126,28 @@ NOTE: Make sure to boot the Live USB in the UEFI mode
 - grub-mkconfig -o /boot/grub/grub.cfg
 - grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Antergos-grub
 
+UPDATED
+
+- sudo su
+- fdisk -l # check partitions IDs
+- cryptsetup open /dev/nvme0n1p7 mycrypt # decrupt LUKS
+
+- mount /dev/mapper/mycrypt /mnt
+- btrfs subvolume list -p /mnt # list volumes
+- sudo umount /mnt
+
+- sudo mount -o subvol=@ /dev/mapper/mycrypt /mnt
+- sudo mount -o subvol=@log /dev/mapper/mycrypt /mnt/var/log
+- sudo mount -o subvol=@cache /dev/mapper/mycrypt /mnt/var/cache
+- sudo mount -o subvol=@home /dev/mapper/mycrypt /mnt/home
+
+- sudo mount /dev/nvme0n1p6 /mnt/boot/
+- sudo mount /dev/nvme0n1p1 /mnt/boot/efi
+
+- arch-chroot /mnt/
+- grub-mkconfig -o /boot/grub/grub.cfg
+- grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=EndeavourOS-grub
+
 ## Changing default app
 
 Check the current default for mime type:
