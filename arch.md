@@ -117,6 +117,11 @@ sudo mount -t sysfs /dev/sdaX /mnt/sys
 
 NOTE: Make sure to boot the Live USB in the UEFI mode
 
+> In case of the following error: `Waiting 30 seconds for device ‘/dev/disk/by-label/` <br>
+  `cd dev/disk/by-label` <br>
+  `ls` <br>
+  `mv [Current name] [Missing name]`
+
 - sudo su
 - cryptsetup open /dev/sdaX CryptName
 - mount /dev/mapper/CryptVolumeGroupName-rootvol /mnt
