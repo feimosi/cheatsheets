@@ -164,3 +164,9 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 ```
 
 ➡ https://www.youtube.com/watch?v=z3F0hTigMvU
+
+## List packages that depend on a package 
+
+```sh
+pacman -Qi ruby-xdg | grep 'Required'  
+```
