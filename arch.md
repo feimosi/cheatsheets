@@ -174,7 +174,7 @@ pacman -Qi ruby-xdg | grep 'Required'
 ## Strip metadata from image files
 
 ```sh
-mogrify -strip ./*.jpg
+mogrify -auto-orient -strip ./*.jpg
 ```
 
 ## Compress and resize images to reduce size
