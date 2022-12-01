@@ -170,3 +170,21 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 ```sh
 pacman -Qi ruby-xdg | grep 'Required'  
 ```
+
+## Strip metadata from image files
+
+```sh
+mogrify -strip ./*.jpg
+```
+
+## Compress and resize images to reduce size
+
+```sh
+mogrify -resize 70% -quality 75 *.jpg
+```
+
+## Convert images into a PDF file
+
+```sh
+convert *.jpg -quality 75 Scanned.pdf
+```
