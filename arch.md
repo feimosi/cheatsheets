@@ -146,8 +146,8 @@ UPDATED:
 - mount /dev/nvme0n1p6 /mnt/boot/
 - mount /dev/nvme0n1p1 /mnt/boot/efi
 - arch-chroot /mnt/
-- grub-mkconfig -o /boot/grub/grub.cfg
 - grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=EndeavourOS-grub
+- grub-mkconfig -o /boot/grub/grub.cfg
 
 ➡ https://discovery.endeavouros.com/system-rescue/repair-a-non-booting-grub/2021/03/
 
