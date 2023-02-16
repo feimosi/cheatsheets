@@ -188,3 +188,16 @@ mogrify -resize 70% -quality 75 *.jpg
 ```sh
 convert *.jpg -quality 75 Scanned.pdf
 ```
+
+## Show image GPS metadata
+
+```sh
+exiv2 -g "Exif.GPSInfo"  photo.jpg  
+```
+
+## Reset image GPS metadata
+
+```sh
+exiv2 -M "set Exif.GPSInfo.GPSLongitude 0/1 0/1 0/1" photo.jpg  
+exiv2 -M "set Exif.GPSInfo.GPSLatitude 0/1 0/1 0/1" photo.jpg  
+```
