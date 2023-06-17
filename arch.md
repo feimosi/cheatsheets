@@ -155,6 +155,20 @@ With Rufus v3 make bootable USB in UEFI (MBR) mode. F12 to show the boot menu.
 
 ➡ https://discovery.endeavouros.com/system-rescue/repair-a-non-booting-grub/2021/03/
 
+## Reinstall all packages
+
+chroot steps from above and then:
+
+```sh
+pacman -Qqn | pacman -S -
+```
+
+force reinstall a specific package:
+
+```sh
+pacman -S --overwrite "*" linux
+```
+
 ## Changing default app
 
 Check the current default for mime type:
