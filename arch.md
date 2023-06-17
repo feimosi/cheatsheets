@@ -133,11 +133,15 @@ NOTE: Make sure to boot the Live USB in the UEFI mode
 
 UPDATED:
 
+With Rufus v3 make bootable USB in UEFI (MBR) mode. F12 to show the boot menu.
+
 - sudo su
-- fdisk -l # (optional) check partitions IDs
+- \# (optional) check partitions IDs  
+  fdisk -l 
 - cryptsetup open /dev/nvme0n1p7 mycrypt
 - mount /dev/mapper/mycrypt /mnt
-- btrfs subvolume list -p /mnt # list volumes
+- \# list volumes  
+  btrfs subvolume list -p /mnt 
 - umount /mnt
 - mount -o subvol=@ /dev/mapper/mycrypt /mnt
 - mount -o subvol=@log /dev/mapper/mycrypt /mnt/var/log
