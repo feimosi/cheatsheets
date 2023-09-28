@@ -63,6 +63,11 @@ egrep --color 'pattern|$' <file>
 journalctl --vacuum-size=500M
 ```
 
+## Show journal errors since the last boot
+```sh
+journalctl -p 3 -xb -1 
+```
+
 ## Cut the video file
 ```sh
 ffmpeg -i video.mp4 -ss 00:00:00 -t 00:00:20 -async 1 out.mp4
