@@ -160,6 +160,21 @@ With Rufus v3 make bootable USB in UEFI (MBR) mode. F12 to show the boot menu.
 
 ➡ https://discovery.endeavouros.com/system-rescue/repair-a-non-booting-grub/2021/03/
 
+## Encrypt external drive
+
+1. In GParted, change partition table from MSDOS to GPT
+1. Create an unformatted partiion on the disk 
+1. Check partiion ID with `lsblk --fs`, e.g. sda1
+1. `sudo cryptsetup luksFormat /dev/sda1`
+1. `sudo cryptsetup open /dev/sda1 drive` -> `lsblk` -> "drive" should appear on the list
+1. `sudo mkfs.btrfs /dev/mapper/drive`
+1. `sudo mount /dev/mapper/drive /mnt/`
+1. `sudo chown marek:marek /run/media/marek/c0bfaf54-8574-4ac1-ab9a-db166deb96e9` - set the correct ID from `lsblk`
+1. `sudo umount /mnt`
+1. `sudo cryptsetup close drive`
+
+➡ https://www.youtube.com/watch?v=ZNaT03-xamE
+
 ## Reinstall all packages
 
 chroot steps from above and then:
