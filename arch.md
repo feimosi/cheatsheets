@@ -6,9 +6,17 @@ pacman -S <pkg_name>
 ```
 
 ## Downgrading packages
+
+Pacman
 ```sh
 cd /var/cache/pacman/pkg/
 pacman -U <pkg_file_name>
+```
+
+Yay
+```sh
+cd ~/.cache/yay/<package_folder>
+pacman -U <file_name>.pkg.tar.zst     
 ```
 
 ## Pacman history
