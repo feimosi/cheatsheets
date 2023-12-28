@@ -235,6 +235,12 @@ mogrify -resize 70% -quality 75 *.jpg
 convert *.jpg -quality 75 Scanned.pdf
 ```
 
+## Convert PDF to image
+
+```sh
+pdftoppm -jpeg -r 300 input.pdf output
+```
+
 ## Show image GPS metadata
 
 ```sh
