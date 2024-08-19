@@ -170,17 +170,20 @@ With Rufus v3 make bootable USB in UEFI (MBR) mode. F12 to show the boot menu.
 
 ## Encrypt external drive
 
-1. In GParted, change partition table from MSDOS to GPT
-1. Create an unformatted partiion on the disk 
-1. Check partiion ID with `lsblk --fs`, e.g. sda1
-1. `sudo cryptsetup luksFormat /dev/sda1`
-1. `sudo cryptsetup open /dev/sda1 drive` -> `lsblk` -> "drive" should appear on the list
+1. In GParted, change the partition table from MSDOS to GPT
+1. Create an unformatted partition on the disk 
+1. Check partition ID with `lsblk --fs`, e.g. sda1
+1. `sudo cryptsetup --sector-size=512 luksFormat /dev/sda1`
+1. `sudo cryptsetup open /dev/sda1 drive` -> run `lsblk` -> "drive" should appear on the list
 1. `sudo mkfs.btrfs /dev/mapper/drive`
 1. `sudo mount /dev/mapper/drive /mnt/`
-1. `sudo chown marek:marek /run/media/marek/c0bfaf54-8574-4ac1-ab9a-db166deb96e9` - set the correct ID from `lsblk`
+1. Verify it mounted without issues
 1. `sudo umount /mnt`
 1. `sudo cryptsetup close drive`
-
+1. Open the drive in file manager UI and decrypt it
+1. Run `lsblk --fs` to get the partition UUID
+1. `sudo chown marek:marek /run/media/marek/c0bfaf54-8574-4ac1-ab9a-db166deb96e9` 
+   
 ➡ https://www.youtube.com/watch?v=ZNaT03-xamE
 
 ## Reinstall all packages
