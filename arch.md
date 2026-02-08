@@ -244,6 +244,12 @@ convert *.jpg -quality 75 Scanned.pdf
 pdftoppm -jpeg -r 300 input.pdf output
 ```
 
+## Merge two images into one
+
+```sh
+magick "image1.jpg" "image2.jpg" -auto-orient +append output.jpg
+```
+
 ## Show image GPS metadata
 
 ```sh
