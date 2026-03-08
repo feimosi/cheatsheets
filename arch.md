@@ -232,6 +232,14 @@ mogrify -auto-orient -strip ./*.jpg
 mogrify -resize 70% -quality 75 *.jpg
 ```
 
+## Compress PDF to reduce size
+
+The industry standard for this is Ghostscript
+
+```sh
+\gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
+```
+
 ## Convert images into a PDF file
 
 ```sh
